@@ -2,4 +2,8 @@
     background: #f4f4f4;
     padding: 4px;
     margin: 3px;
+    display: block;
+}
+h2{
+    padding: 10px;
 }

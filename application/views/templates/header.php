@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -26,7 +25,7 @@
           <a class="nav-link" href="<?php echo base_url(); ?>about"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">About</font></font></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url(); ?>posts"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Posts</font></font></a>
+          <a class="nav-link" href="<?php echo base_url(); ?>posts"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Blog</font></font></a>
         </li>
         </ul>
       </div>
