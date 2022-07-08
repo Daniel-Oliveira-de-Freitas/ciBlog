@@ -54,7 +54,7 @@ class Posts extends CI_Controller
                 $post_image = 'noimage.jpg';
             }else{
                 $data = array('upload_data' => $this->upload->data()); 
-                $post_image = $_FILES['postimage']['name'];
+                $post_image = $_FILES['userfile']['name'];
             }
 
             $this->post_model->create_post($post_image);

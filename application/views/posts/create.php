@@ -24,7 +24,7 @@
 <br>
 <div class="form-group">
   <label> Upload Image </label>
-  <input type="file" name="postimage" size="20">
+  <input type="file" name="userfile" size="20">
 
 <br><br>
 <button type="submit" class="btn btn-success">Submit</button>
