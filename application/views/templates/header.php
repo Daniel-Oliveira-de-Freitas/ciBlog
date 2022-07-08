@@ -4,6 +4,7 @@
   <title>ciBlog</title>
   <link rel="stylesheet" href="https://bootswatch.com/5/minty/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
+  <script src="http://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
 </head>
 
 <body>
@@ -16,10 +17,8 @@
 
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="<?php echo base_url(); ?>"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Home
-            </font></font><span class="visually-hidden"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">(atual)</font></font></span>
-          </a>
+      <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url(); ?>about"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Home</font></font></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url(); ?>about"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">About</font></font></a>
@@ -28,6 +27,11 @@
           <a class="nav-link" href="<?php echo base_url(); ?>posts"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Blog</font></font></a>
         </li>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url(); ?>posts/create"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Create Post</font></font></a>
+        </li>
+          </li>
       </div>
     </div>
   </nav>
