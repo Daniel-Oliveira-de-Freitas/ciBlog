@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
       <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url(); ?>about"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Home</font></font></a>
+          <a class="nav-link" href="<?php echo base_url(); ?>"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Home</font></font></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url(); ?>about"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">About</font></font></a>
@@ -26,10 +26,16 @@
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url(); ?>posts"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Blog</font></font></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url(); ?>categories"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Categories</font></font></a>
+        </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
         <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url(); ?>posts/create"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Create Post</font></font></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url(); ?>categories/create"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Create Category</font></font></a>
         </li>
           </li>
       </div>
