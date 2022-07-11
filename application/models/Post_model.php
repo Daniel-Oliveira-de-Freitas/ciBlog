@@ -27,6 +27,7 @@ class Post_model extends CI_Model
             'category_id' => $this->input->post('category_id'),
             'post_image' => $post_image
         );
+        //var_dump($data);die();
         return $this->db->insert('posts', $data);
     }
 
