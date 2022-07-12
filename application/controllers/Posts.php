@@ -15,6 +15,8 @@ class Posts extends CI_Controller
     public function view($slug = null)
     {
         $data['post'] = $this->post_model->get_posts($slug);
+        $post_id = $data['post']['id'];
+        $data['comments'] = $this->comment_model->get_comments($post_id);
 
         if (empty($data['post'])) {
             show_404();
@@ -49,7 +51,7 @@ class Posts extends CI_Controller
             $config['max_height'] = '2000';
             
             $this->load->library('upload', $config);
-
+            
             if (!$this->upload->do_upload()) {
                 $errors = array('error' => $this->upload->display_errors());
                 $post_image = 'noimage.jpg';
