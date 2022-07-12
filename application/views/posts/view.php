@@ -5,9 +5,12 @@
     <?php echo $post['body'];?>
 </div>
 <hr>
-<div class="btn-group" role="group" aria-label="Exemplo básico">
-    <a class="btn btn-Warning" href="<?php echo base_url();?>edit/<?php echo $post['slug'];?>">Edit</a>
-    <a class="btn btn-danger" href="<?php echo base_url();?>delete/<?php echo $post['slug'];?>">Delete</a>
+
+<div class="btn-group mr-2" role="group">
+    <a class="btn btn-Warning" href="<?php echo base_url();?>posts/edit/<?php echo $post['slug'];?>">Edit</a>
+</div>
+<div class="btn-group mr-2" role="group">
+    <a class="btn btn-danger" href="<?php echo base_url();?>posts/delete/<?php echo $post['id'];?>">Delete</a>
 </div>
 </form>
 <hr>
