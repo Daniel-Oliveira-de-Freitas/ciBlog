@@ -8,65 +8,127 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="<?php echo base_url(); ?>"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ciBlog</font></font></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Alternar de navegação">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="<?php echo base_url(); ?>">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">ciBlog</font>
+        </font>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Alternar de navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav me-auto">
-      <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url(); ?>"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Home</font></font></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url(); ?>about"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">About</font></font></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url(); ?>posts"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Blog</font></font></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url(); ?>categories"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Categories</font></font></a>
-        </li>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Home</font>
+              </font>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>about">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">About</font>
+              </font>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>posts">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Blog</font>
+              </font>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>categories">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Categories</font>
+              </font>
+            </a>
+          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url(); ?>users/register"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Register User</font></font></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url(); ?>posts/create"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Create Post</font></font></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url(); ?>categories/create"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Create Category</font></font></a>
-        </li>
-          </li>
+          <?php if (!$this->session->userdata('logged_in')) : ?>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url(); ?>users/login">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">Login</font>
+                </font>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url(); ?>users/register">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">Register User</font>
+                </font>
+              </a>
+            </li>
+          <?php endif; ?>
+          <?php if ($this->session->userdata('logged_in')) : ?>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url(); ?>posts/create">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">Create Post</font>
+                </font>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url(); ?>categories/create">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">Create Category</font>
+                </font>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url(); ?>users/logout">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">Logout</font>
+                </font>
+              </a>
+            </li>
+        </ul>
+      <?php endif; ?>
       </div>
     </div>
   </nav>
 
   <div class="container">
     <!-- Flash messages -->
-    <?php if($this->session->flashdata('user_registered')): ?>
-      <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>'; ?>
+    <?php if ($this->session->flashdata('user_registered')) : ?>
+      <?php echo '<p class="alert alert-success">' . $this->session->flashdata('user_registered') . '</p>'; ?>
     <?php endif; ?>
 
-    <?php if($this->session->flashdata('post_created')): ?>
-      <?php echo '<p class="alert alert-success">'.$this->session->flashdata('post_created').'</p>'; ?>
+    <?php if ($this->session->flashdata('post_created')) : ?>
+      <?php echo '<p class="alert alert-success">' . $this->session->flashdata('post_created') . '</p>'; ?>
     <?php endif; ?>
 
-    <?php if($this->session->flashdata('post_updated')): ?>
-      <?php echo '<p class="alert alert-success">'.$this->session->flashdata('post_updated').'</p>'; ?>
+    <?php if ($this->session->flashdata('post_updated')) : ?>
+      <?php echo '<p class="alert alert-success">' . $this->session->flashdata('post_updated') . '</p>'; ?>
     <?php endif; ?>
 
-    <?php if($this->session->flashdata('category_created')): ?>
-      <?php echo '<p class="alert alert-success">'.$this->session->flashdata('category_created').'</p>'; ?>
+    <?php if ($this->session->flashdata('category_created')) : ?>
+      <?php echo '<p class="alert alert-success">' . $this->session->flashdata('category_created') . '</p>'; ?>
     <?php endif; ?>
 
-    <?php if($this->session->flashdata('post_deleted')): ?>
-      <?php echo '<p class="alert alert-success">'.$this->session->flashdata('post_deleted').'</p>'; ?>
+    <?php if ($this->session->flashdata('post_deleted')) : ?>
+      <?php echo '<p class="alert alert-success">' . $this->session->flashdata('post_deleted') . '</p>'; ?>
     <?php endif; ?>
 
-    <?php if($this->session->flashdata('post_update')): ?>
-      <?php echo '<p class="alert alert-success">'.$this->session->flashdata('post_update').'</p>'; ?>
+    <?php if ($this->session->flashdata('post_update')) : ?>
+      <?php echo '<p class="alert alert-success">' . $this->session->flashdata('post_update') . '</p>'; ?>
+    <?php endif; ?>
+
+    <?php if ($this->session->flashdata('login_failed')) : ?>
+      <?php echo '<p class="alert alert-danger">' . $this->session->flashdata('login_failed') . '</p>'; ?>
+    <?php endif; ?>
+
+    <?php if ($this->session->flashdata('user_loggedin')) : ?>
+      <?php echo '<p class="alert alert-success">' . $this->session->flashdata('user_loggedin') . '</p>'; ?>
+    <?php endif; ?>
+
+    <?php if ($this->session->flashdata('user_loggedout')) : ?>
+      <?php echo '<p class="alert alert-success">' . $this->session->flashdata('user_loggedout') . '</p>'; ?>
     <?php endif; ?>

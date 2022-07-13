@@ -4,8 +4,9 @@
 <div class="post-body">
     <?php echo $post['body'];?>
 </div>
-<hr>
 
+<?php if($this->session->userdata('user_id') == $post['user_id']): ?>
+<hr>
 <div class="btn-group mr-2" role="group">
     <a class="btn btn-Warning" href="<?php echo base_url();?>posts/edit/<?php echo $post['slug'];?>">Edit</a>
 </div>
@@ -13,6 +14,7 @@
     <a class="btn btn-danger" href="<?php echo base_url();?>posts/delete/<?php echo $post['id'];?>">Delete</a>
 </div>
 </form>
+<?php endif; ?>
 <hr>
 <h3>Comments</h3>
 <?php if ($comments): ?>
