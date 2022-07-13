@@ -5,8 +5,14 @@ class Post_model extends CI_Model
     {
         $this->load->database();
     }
-    public function get_posts($slug = false)
+    public function get_posts($slug = FALSE, $limit = FALSE, $offset =  FALSE)
     {
+        if ($limit) {
+            $this->db->limit($limit, $offset);
+        } else {
+            $this->db->limit(3);
+        } 
+
         if ($slug === false) {
             $this->db->order_by('posts.id', 'DESC');
             $this->db->join('categories', 'categories.id = posts.category_id');

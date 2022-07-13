@@ -13,4 +13,21 @@ h2{
     height: auto;
 }
 
+.pagination-links{
+    margin: 30px 0;
+    text-align: center;
+}
 
+.pagination-links strong{
+    padding: 10px 13px;
+    margin: 5px;
+    background: #f4f4f4;
+    border: 1px #ccc solid;
+}
+
+.pagination-links{
+    padding: 10px 13px;
+    margin: 5px;
+    background: #f4f4f4;
+    border: 1px #ccc solid;
+}
