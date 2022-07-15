@@ -9,8 +9,6 @@ class Post_model extends CI_Model
     {
         if ($limit) {
             $this->db->limit($limit, $offset);
-        } else {
-            $this->db->limit(3);
         } 
 
         if ($slug === false) {
