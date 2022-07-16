@@ -1,38 +1,39 @@
-.post-date{
+.post-date {
     background: #f4f4f4;
     padding: 4px;
     margin: 3px;
     display: block;
 }
-h2{
+
+h2 {
     padding: 10px;
 }
 
-.post-thumb{
+.post-thumb {
     width: 100%;
     height: auto;
 }
 
-.pagination-links{
+.pagination-links {
     margin: 30px 0;
     text-align: center;
 }
 
-.pagination-links strong{
+.pagination-links strong {
     padding: 10px 13px;
     margin: 5px;
     background: #f4f4f4;
     border: 1px #ccc solid;
 }
 
-a.pagination-links{
+a.pagination-links {
     padding: 10px 13px;
     margin: 5px;
     background: #f4f4f4;
     border: 1px #ccc solid;
 }
 
-.cat-delete{
+.cat-delete {
     display: inline;
     float: right;
     margin-right: 10px;
